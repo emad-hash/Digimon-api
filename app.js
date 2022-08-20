@@ -5,7 +5,7 @@ function Digimon(image, level, name) {
 }
 let digimonArr = [];
 fetch("https://digimon-api.vercel.app/api/digimon")
-	.then((res) => res.json())
+	.then((ema) => ema.json())
 	.then((data) => {
 		console.log(data);
 		for (let i = 0; i < 20; i++) {
@@ -13,7 +13,6 @@ fetch("https://digimon-api.vercel.app/api/digimon")
 			digimonArr.push(newDigimon);
 		}
 		console.log(digimonArr);
-
 		digimonArr.map(render);
 		// render(data);
 	});
@@ -36,6 +35,19 @@ function render(digimonArr) {
 	p.textContent = "level: " + digimonArr.level;
 	card.append(p);
 }
+// search
+// const searchInput = document.getElementById("emad6")
+// searchInput.addEventListener("input", e => {
+//   const value = e.target.value.toLowerCase()
+//   users.forEach(digimonArr => {
+//     const isVisible =
+//     digimonArr.name.toLowerCase().includes(value) ||
+//     digimonArr.level.toLowerCase().includes(value)
+//     user.element.classList.toggle("hide", !isVisible)
+//   })
+// })
+
+
 
 
 
